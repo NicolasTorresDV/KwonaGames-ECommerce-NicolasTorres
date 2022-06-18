@@ -1,7 +1,24 @@
 import React from "react";
-import logo from "../assets/images/Logo.png"
-import ShoppingBag from "../assets/images/ShoppingBag.ico"
+import logo from "../../assets/images/Logo.png"
+import CartWidget from "../CartWidget/CartWidget";
 
+
+
+const navItems = [
+{
+    id: 0,
+    label: "Inicio"
+},
+{
+    id: 1,
+    label: "Productos"
+},
+{
+    id: 2,
+    label: "Quienes somos?"
+}
+
+];
 
 const NavBar = () => {
 
@@ -10,12 +27,10 @@ const NavBar = () => {
             <img style={styles.headerLogoImage} src={logo} alt="Logo Image" />
             <nav style={styles.headerNav}>
                 <ul style={styles.headerNavUl}>
-                    <li style={styles.headerNavUlLi}><a style={styles.headerNavUlLiA} href="#">Inicio</a></li>
-                    <li style={styles.headerNavUlLi}><a style={styles.headerNavUlLiA} href="#">Productos</a></li>
-                    <li style={styles.headerNavUlLi}><a style={styles.headerNavUlLiA} href="#">Quienes somos?</a></li>
+                    {navItems.map((item) => (<li style={styles.headerNavUlLi} key={item.id}><a style={styles.headerNavUlLiA} href="#" >{item.label}</a></li>))}
                 </ul>
             </nav>
-            <img  style={styles.headerShoppingBag}  src={ShoppingBag} alt="Logo Cart" />
+            <CartWidget />
         </header>
     );
 
@@ -54,11 +69,6 @@ const styles = {
     headerNavUlLiA: {
         textDecoration: 'none',
         color: '#fff'
-    },
-
-    headerShoppingBag: {
-        width: '1.9%',
-        margin: '2%'
     }
     
 }
