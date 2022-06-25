@@ -2,11 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80vh;
+    height: 300px;
+    flex-direction: column;
 }
 
 
 .landingContainer span{
     font-size: 50px;
     font-weight: 900;
+}
+
+/* Esto es temporal para la entrega de la clase  4*/
+.tempClass{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }

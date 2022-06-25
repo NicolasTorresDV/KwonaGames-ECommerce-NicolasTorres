@@ -1,0 +1,57 @@
+.infoCountContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    font-family: 'Arial';
+    width: 20%;
+    height: 100%;
+    background-color: rgb(237 237 237);
+    padding: 2%;
+    border-radius: 5%;
+    border: 2px solid rgb(0, 119, 255);;
+}
+
+.itemUnits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    margin: 10%;
+    border: 1px solid rgb(0, 119, 255);
+
+}
+
+.itemUnitsButton {
+    background-color: white;
+    border: none;
+    color: rgb(0, 119, 255);;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 0;
+    height: 100%;
+    width: 15%;
+    border-radius: 50%;
+    margin: 5%;
+}
+
+.itemUnitsSpan{
+    text-align: center;
+    width: 70%;
+    font-weight: bold;
+}
+
+.itemInfo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.itemInfo span{
+    padding: 3%;
+    font-weight: bold;
+}

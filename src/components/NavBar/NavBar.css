@@ -1,0 +1,33 @@
+.headerContainer{
+    background: linear-gradient(to top right, #212326 43%, #505459 132%);
+    display: flex;
+    align-items: center
+}
+
+.headerLogoImage{
+    padding: 20px;
+    width: 7%
+}
+
+.headerNav{
+    display: flex;
+    width: 100%;
+    justify-content: center
+}
+
+.headerNavUl{
+    display: flex;
+    list-style-type: none 
+}
+
+.headerNavUlLi{
+    padding:  0px 30px;
+    font-family: "Teko" , "Arial";
+    font-size: 30px;
+    letter-spacing: 2px
+}
+
+.headerNavUlLiA{
+    text-decoration: none;
+    color: #fff
+}
