@@ -3,7 +3,7 @@ import logo from "../../assets/images/Logo.png"
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css"
 
-
+//Cargo mis items del Nav
 const navItems = [
 {
     id: 0,
