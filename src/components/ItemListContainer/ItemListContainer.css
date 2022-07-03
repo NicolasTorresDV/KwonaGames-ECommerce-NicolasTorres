@@ -17,5 +17,5 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    width: 100vw;
+    width: -webkit-fill-available;
 }

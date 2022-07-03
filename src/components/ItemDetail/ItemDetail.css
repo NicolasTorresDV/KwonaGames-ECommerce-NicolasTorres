@@ -1,0 +1,53 @@
+.itemDetail{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: white;
+    padding: 2% 0;
+    margin: 5%;
+    width: 60%;
+    background-color: #1d1e20;
+    border-radius: 23px;
+    height: 100%;
+    box-shadow: -2px 0px 12px -2px rgba(156, 156, 156, 0.96);
+    -webkit-box-shadow: -2px 0px 12px -2px rgba(156, 156, 156, 0.96);
+    -moz-box-shadow: -2px 0px 12px -2px rgba(156, 156, 156, 0.96);
+}
+
+.itemDetailImage img{
+    height: 500px;
+    width: 500px;
+    border-radius: 23px;
+}
+
+.itemDetailDescription{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 30%;
+}
+
+.itemDetailDescriptionText{
+    display: flex;
+    flex-direction: column;
+}
+
+.itemDetailDescriptionTitle {
+    font-size: 35px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.itemDetailDescriptionDescription {
+    margin-bottom: 30px;
+}
+
+.itemDetailDescriptionPrice{
+    margin-bottom: 20px;
+}
+
+.itemDetailDescriptionStock{
+    margin-bottom: 20px;
+}

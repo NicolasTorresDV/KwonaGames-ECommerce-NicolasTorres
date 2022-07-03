@@ -17,7 +17,6 @@ const Item = ({product}) => {
                 <span className="itemElementsPrice">{price}</span>
                 <p className="itemElementsStock"> Stock disponible: {stock}</p>
             </div>
-                <ItemCount stock={stock} initial={0}/>
         </div>
     )
 

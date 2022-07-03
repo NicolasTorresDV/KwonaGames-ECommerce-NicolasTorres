@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Teko:wght@300&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 body{
-  background-color: #e8ecf3;
+  background-color: #141416;
+  color: white;
 }
