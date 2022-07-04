@@ -31,3 +31,7 @@
     text-decoration: none;
     color: #fff
 }
+
+.headerLogoLinkImage {
+    display: contents;
+}

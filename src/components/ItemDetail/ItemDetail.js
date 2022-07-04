@@ -7,7 +7,6 @@ const ItemDetail = (props)=> {
 
     //Declaro las variables que voy a usar de products
     const {title, description , price , pictureUrl , stock} = props.props;
-    console.log(props.props.description);
     return (
         <div className="itemDetail">
             <div className="itemDetailImage">

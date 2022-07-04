@@ -4,15 +4,17 @@ import ItemList from "../ItemList/ItemList";
 import useProductList from "../../hooks/useItemListContainer";
 import LoadingPreviewGif from "../../assets/images/LoadingPreviewGif.gif"
 import ErrorPreviewImage from "../../assets/images/ErrorPreviewImage.png"
+import { useParams } from 'react-router-dom'; 
 
 const ItemListContainer = ({greeting}) => {
 
     const {getProducts , products, loadingPreview, errorPreview } = useProductList(); //Obtengo los datos que necesito desde el Hook
 
+    const { categoryid } = useParams();
 
     useEffect( () => {
-        getProducts();
-    }, []); //Cuando haga mount este componente quiero que me traiga los productos
+        getProducts(categoryid);
+    }, [categoryid]); //Cuando haga mount este componente quiero que me traiga los productos
 
     return (
         <>

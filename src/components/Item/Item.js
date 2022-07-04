@@ -1,5 +1,4 @@
 import React from "react";
-import ItemCount from "../ItemCount/ItemCount";
 import "./Item.css"
 
 //Obtengo un producto
@@ -9,7 +8,7 @@ const Item = ({product}) => {
     const {title, description , price , pictureUrl , stock} = product;
 
     return (
-        <div className="itemWrap">
+        // <div className="itemWrap">
             <div className="itemElements">
                 <span className="itemElementsTitle"> {title}</span>
                 <img src={pictureUrl} alt={title} className="itemElementsImage"/>
@@ -17,7 +16,7 @@ const Item = ({product}) => {
                 <span className="itemElementsPrice">{price}</span>
                 <p className="itemElementsStock"> Stock disponible: {stock}</p>
             </div>
-        </div>
+        // </div>
     )
 
 

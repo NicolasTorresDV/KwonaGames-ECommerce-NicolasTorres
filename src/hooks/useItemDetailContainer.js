@@ -1,5 +1,5 @@
 import { useState } from "react";
-import getData from "../AsyncMock/productMock"; //Traigo los datos de prueba
+import { getProducto } from "../AsyncMock/productMock"; //Traigo los datos de prueba
 
 
 const useItemDetails = () => {
@@ -8,14 +8,13 @@ const useItemDetails = () => {
     const [product , setProduct] = useState({});
 
 
-    const getProduct = async () => {
+    const getProduct = async (id) => {
         try {
-            const productData = await getData;
-            //Si esta todo ok mando un producto (Hardcodeado)
-            setProduct(productData[2]);
+            const productData = await getProducto(id);
+            setProduct(productData[0]);
         } catch (error) {
             //Si hay algun error, mando un alert
-            alert("Ocurrió un error al cargar el detalle del producto");
+            alert("Ocurrió un error al cargar el detalle del producto " + error);
         }
     }
 

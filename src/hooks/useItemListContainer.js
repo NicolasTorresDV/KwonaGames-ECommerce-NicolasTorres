@@ -1,5 +1,5 @@
 import { useState } from "react";
-import getData from "../AsyncMock/productMock"; //Traigo los datos de prueba
+import { getData } from "../AsyncMock/productMock"; //Traigo los datos de prueba
 
  //Uso toda la logica de ItemListContainer aqui.
 const useProductList = () => {
@@ -9,10 +9,10 @@ const useProductList = () => {
     const [errorPreview, setErrorPreview] = useState(false);
 
 
-    const getProducts = async () => {
+    const getProducts = async (categoryid) => {
         try {
             setErrorPreview(false);
-            const productData = await getData;
+            const productData = await getData(categoryid);
             //Si esta todo ok se envia los datos de los productos en productData
             setProducts(productData);
         } catch (error) {

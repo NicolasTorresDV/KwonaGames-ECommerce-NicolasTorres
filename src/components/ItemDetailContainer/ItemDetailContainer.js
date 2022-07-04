@@ -2,15 +2,18 @@ import React, { useEffect }  from "react";
 import useItemDetailContainer from "../../hooks/useItemDetailContainer";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.css"
+import { useParams } from 'react-router-dom'; 
 
 const ItemDetailContainer = () => {
 
     const { getProduct , product} = useItemDetailContainer(); 
 
+    const { id } = useParams();
+
     useEffect( () => {
-        getProduct();
-        console.log(product);
-    }, []); //Cuando haga mount este componente quiero que me traiga el producto
+        getProduct(id);
+        console.log(product)
+    }, [id]); //Cuando haga mount este componente quiero que me traiga el producto
 
     return (
         <div className="itemDetailContainer">
