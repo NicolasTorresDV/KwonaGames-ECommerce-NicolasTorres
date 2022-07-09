@@ -5,7 +5,7 @@
     width: 100%;
     height: 100%;
     background-color: white;
-    border: 3px solid rgb(146, 146, 146);
+    /* border: 3px solid rgb(146, 146, 146); */
 
 }
 
@@ -39,4 +39,23 @@
 .itemInfo span{
     padding: 3%;
     font-weight: bold;
+}
+
+.itemUnitsAdd{
+    width: 100%;
+    height: 100%;
+    font-family: inherit;
+    font-size: large;
+    margin: 5% 0;
+    padding: 5% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0258e3;
+    color: white;
+    cursor: pointer;
+}
+
+.itemUnitsAdd:active{
+    background-color: #2074fc;
 }

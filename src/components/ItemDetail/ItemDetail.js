@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount"
+import { Link } from "react-router-dom";
+import useItemDetail from "../../hooks/useItemDetail";
 
 const ItemDetail = (props)=> {
 
 
     //Declaro las variables que voy a usar de products
     const {title, description , price , pictureUrl , stock} = props.props;
+    const {finishShop , productsAdded} = useItemDetail();
+
     return (
         <div className="itemDetail">
             <div className="itemDetailImage">
@@ -18,10 +22,14 @@ const ItemDetail = (props)=> {
                     <p className="itemDetailDescriptionDescription"> <strong> Descripcion: </strong><br/>{description}</p>
                     <p className="itemDetailDescriptionPrice"><strong>Precio:</strong> {price}</p>
                 </div>
+                {
+                    productsAdded ? 
                 <div>
                     <p className="itemDetailDescriptionStock"> <strong>Stock:</strong> {stock}</p>
-                    <ItemCount stock={stock} initial={0}/>
+                    <ItemCount stock={stock} initial={0} finishShop={finishShop}/>
                 </div>
+                : <Link className="itemDetailLink" to={`/Cart`}><button className="itemDetailFinish">Finalizar</button></Link>
+                }
             </div>
         </div>
     )

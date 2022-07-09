@@ -12,7 +12,6 @@ const ItemDetailContainer = () => {
 
     useEffect( () => {
         getProduct(id);
-        console.log(product)
     }, [id]); //Cuando haga mount este componente quiero que me traiga el producto
 
     return (
