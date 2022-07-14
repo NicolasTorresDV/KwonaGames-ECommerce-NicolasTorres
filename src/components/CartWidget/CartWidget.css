@@ -1,4 +1,16 @@
+.headerCartWidgerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .headerShoppingBag{
     width: 40%; 
-    margin: 2%
+    margin: 2%;
 }

@@ -9,7 +9,8 @@ const ItemDetail = (props)=> {
 
     //Declaro las variables que voy a usar de products
     const {title, description , price , pictureUrl , stock} = props.props;
-    const {finishShop , productsAdded} = useItemDetail();
+    const product = props.props;
+    const {finishShop , productsAdded} = useItemDetail(product);
 
     return (
         <div className="itemDetail">
@@ -23,12 +24,13 @@ const ItemDetail = (props)=> {
                     <p className="itemDetailDescriptionPrice"><strong>Precio:</strong> {price}</p>
                 </div>
                 {
-                    productsAdded ? 
+                productsAdded ? 
+                <Link className="itemDetailLink" to={`/Cart`}><button className="itemDetailFinish">Finalizar</button></Link>
+                : 
                 <div>
                     <p className="itemDetailDescriptionStock"> <strong>Stock:</strong> {stock}</p>
                     <ItemCount stock={stock} initial={0} finishShop={finishShop}/>
                 </div>
-                : <Link className="itemDetailLink" to={`/Cart`}><button className="itemDetailFinish">Finalizar</button></Link>
                 }
             </div>
         </div>

@@ -16,7 +16,7 @@ const ItemCount = ({stock , initial , finishShop}) => {
                 <button className="itemUnitsButton" onClick={()=>onAdd(+1)}>+</button>
             </div>
             <div>
-                <button onClick={finishShop} className="itemUnitsAdd">Agregar al carrito</button>
+                <button onClick={() => finishShop(amount)} className="itemUnitsAdd">Agregar al carrito</button>
             </div>
         </div>
 
