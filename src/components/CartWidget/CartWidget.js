@@ -2,14 +2,15 @@ import React, { useContext } from "react";
 import ShoppingBag from "../../assets/images/ShoppingBag.ico"
 import './CartWidget.css'
 import { cartContext } from "../../Context/CartContext";
+import { Link } from "react-router-dom";
 
 const CartWidget = () => {
 
     const { qtyProdcuts } = useContext(cartContext);
     return (
         <div className="headerCartWidgerContainer">
-            <a href="#"><img  className="headerShoppingBag" src={ShoppingBag} alt="Logo Cart" /></a>
-            <p className="headerQuantity"> {qtyProdcuts}</p>
+            <Link to={"/Cart"}><img  className="headerShoppingBag" src={ShoppingBag} alt="Logo Cart" /></Link>
+            {(qtyProdcuts === 0)? "" :  <p className="headerQuantity"> {qtyProdcuts}</p>}
         </div>
     )
 }
