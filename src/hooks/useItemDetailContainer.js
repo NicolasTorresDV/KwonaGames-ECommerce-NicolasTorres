@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { getProducto } from "../AsyncMock/productMock"; //Traigo los datos de prueba
+// import { getProducto } from "../AsyncMock/productMock"; //Traigo los datos de prueba
+import { database } from "../Firebase/firebase";
+import { doc , getDoc , collection } from "firebase/firestore"
 
 
 const useItemDetails = () => {
@@ -10,8 +12,16 @@ const useItemDetails = () => {
 
     const getProduct = async (id) => {
         try {
-            const productData = await getProducto(id);
-            setProduct(productData[0]);
+            // const productData = await getProducto(id);
+            const productCollection = collection(database , 'Productos')
+            const refDoc = doc(productCollection , id )
+            const productDocs = await getDoc(refDoc);
+
+
+            setProduct({
+                id: productDocs.id,
+                ...productDocs.data(),
+            });
         } catch (error) {
             //Si hay algun error, mando un alert
             alert("Ocurrió un error al cargar el detalle del producto " + error);

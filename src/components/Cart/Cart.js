@@ -37,7 +37,7 @@ const Cart = ()=> {
                             </div>                           
                         </div>
                         <div className="cartButtonContainer">
-                            <button onClick={() => {removeItem(elementProduct.id); console.log(products);}} className="cartButton">Eliminar</button>
+                            <button onClick={() => {removeItem(elementProduct.id);}} className="cartButton">Eliminar</button>
                         </div>
                     </div>
                 ))

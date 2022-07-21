@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { getData } from "../AsyncMock/productMock"; //Traigo los datos de prueba
+// import { getData } from "../AsyncMock/productMock"; //Traigo los datos de prueba
+import { database } from "../Firebase/firebase";
+import { getDocs , collection , query, where } from "firebase/firestore"
 
  //Uso toda la logica de ItemListContainer aqui.
 const useProductList = () => {
@@ -12,7 +14,23 @@ const useProductList = () => {
     const getProducts = async (categoryid) => {
         try {
             setErrorPreview(false);
-            const productData = await getData(categoryid);
+            const productsCollection = collection(database, 'Productos');
+            
+            //Si el category es undefined, traigo todos los productos de ProductCollection, sino lo filtro pro categoryId en la query
+            const queryCategories = categoryid ? query(productsCollection , where('categoryid', '==' , categoryid )) : productsCollection;
+
+            //Asigno los datos de queryCategories a productDocs
+            const productDocs = await getDocs(queryCategories);
+
+            const productData = productDocs.docs.map (
+                elementProduct => {
+                    return {
+                        id: elementProduct.id,
+                        ...elementProduct.data()
+                    }
+                }
+            )
+            
             //Si esta todo ok se envia los datos de los productos en productData
             setProducts(productData);
         } catch (error) {

@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { getCategories } from "../AsyncMock/productMock"; //Traigo los datos de prueba
+// import { getCategories } from "../AsyncMock/productMock"; //Traigo los datos de prueba
+import { database } from "../Firebase/firebase";
+import { getDocs , collection} from "firebase/firestore"
 
  //Uso toda la logica de NavBar aqui.
 const useProductCategories = () => {
@@ -8,16 +10,18 @@ const useProductCategories = () => {
 
     const getProductsCategories = async () => {
         try {
-            const productData = await getCategories;
+
+            const categoriesCollection = collection(database, 'Categories');
+            const categoriesDocs = await getDocs(categoriesCollection)
+
             let counter = 0;
             let navItemsAux = [];
-            productData.forEach(element => {
+            categoriesDocs.docs.forEach(element => {
                 let newNavItem = {
                     id: counter,
-                    label: element.categoryid,
-                    route: `/Categories/${element.categoryid}`
+                    label: element.data().categoryid,
+                    route: `/Categories/${element.data().categoryid}`
                 }
-        
                 navItemsAux.push(newNavItem);
                 counter++;
             });
