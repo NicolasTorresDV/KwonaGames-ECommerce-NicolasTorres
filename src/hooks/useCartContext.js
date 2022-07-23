@@ -6,13 +6,25 @@ const useCartContext = () => {
     //Declaro los hooks que voy a usar
     const [products , setProducts] = useState([]);
     const [qtyProdcuts , setQtyProducts] = useState(0);
-
+    const [productsFinalPrice  , setProductsFinalPrice] = useState(0);
+ 
     //Devuelve la cantidad de productos
     const quantityProducts = () => {
     let quantity = 0;
     products.forEach(elementProduct => quantity += elementProduct.quantity);
 
     setQtyProducts(quantity);
+    }
+
+    //Total final
+    const productsTotal = () => {
+        let totalPrice = 0;
+        products.forEach(elementProduct => {
+            totalPrice += parseInt(elementProduct.priceNum) * parseInt(elementProduct.quantity)
+        })
+
+        setProductsFinalPrice(totalPrice)
+
     }
 
     //Añado un producto, y si ya existe, sumo la cantidad
@@ -32,6 +44,7 @@ const useCartContext = () => {
             }
         }
         quantityProducts();
+        productsTotal();
     }
 
 
@@ -39,6 +52,7 @@ const useCartContext = () => {
     const removeItem = (productId) =>{
         setProducts(products.filter(elementProducts => elementProducts.id !== productId));
         quantityProducts();
+        productsTotal();
     }
 
     //Me fijo si existe el producto con array.some , que me devuelve un booleano si esta el elemento en la lista o no
@@ -50,12 +64,15 @@ const useCartContext = () => {
     const clearCart = () => {
         setProducts([]);
         quantityProducts() ;
+        productsTotal();
     }
+
+    
     
    
 
     return {
-        products , qtyProdcuts , addItem , removeItem , isInCart , clearCart , quantityProducts
+        products , qtyProdcuts , productsFinalPrice , addItem , removeItem , isInCart , clearCart , quantityProducts , productsTotal
     }
 
 }
