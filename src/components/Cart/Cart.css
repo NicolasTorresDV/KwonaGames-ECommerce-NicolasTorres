@@ -148,3 +148,31 @@
   ::-webkit-scrollbar-thumb:active {
     background: #555;
   }
+
+
+
+
+@media (max-width: 1501px) {
+    .buyContainer{
+        flex-direction: column;
+    }
+
+    .cartProductsContainer{
+        height: auto;
+    }
+
+    .cartContainer{
+        margin: 2%;
+    }
+
+    .cartTotal{
+        margin: 5% 5% 0 5%;
+    }
+}
+
+@media (max-width: 1001px) {
+
+    .cartContainer{
+        width: 90%;
+    }
+}

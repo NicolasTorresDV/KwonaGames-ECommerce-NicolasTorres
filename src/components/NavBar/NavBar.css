@@ -35,3 +35,29 @@
 .headerLogoLinkImage {
     display: contents;
 }
+
+
+
+@media (max-width: 1101px) {
+    .headerLogoImage{
+        width: 15%;
+    }
+  }
+
+
+  @media (max-width: 600px) {
+
+    .headerLogoImage{
+        width: 30%;
+    }
+
+    .headerContainer{
+        flex-direction: column;
+    }
+
+    .headerShoppingBag{
+        width: 30%;
+        margin-bottom: 15%;
+        height: 100%;
+    }
+  }

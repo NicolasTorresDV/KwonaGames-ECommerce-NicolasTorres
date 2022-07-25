@@ -23,7 +23,7 @@ const ItemListContainer = ({greeting}) => {
                      
         </div>
         <div className="itemListContainer"> 
-            {/* Uso un ternario dentro de otro, para que me salga el gif de cargando, y si el "Fetch" da ok, se cargan los productos, sino se da un mensaje de error */}
+            {/* Uso un ternario dentro de otro, para que me salga el gif de cargando, y si esta todo ok, se cargan los productos, sino se da un mensaje de error */}
             {loadingPreview ? <div className="itemListLoading"><img src={LoadingPreviewGif} alt="Cargando" /></div> : (errorPreview ? <div><img src={ErrorPreviewImage} alt="Error" /><p>Ocurrió un error</p></div>: <ItemList products={products}/>)}   
         </div>  
         </>

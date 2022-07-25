@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom";
 import useItemDetail from "../../hooks/useItemDetail";
+//Toastify
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetail = (props)=> {
 
@@ -10,7 +13,8 @@ const ItemDetail = (props)=> {
     //Declaro las variables que voy a usar de products
     const {title, description , price , pictureUrl , stock} = props.props;
     const product = props.props;
-    const {finishShop , productsAdded} = useItemDetail(product);
+    const {finishShop , productsAdded  } = useItemDetail(product);
+
 
     return (
         <div className="itemDetail">
@@ -30,6 +34,17 @@ const ItemDetail = (props)=> {
                 <div>
                     <p className="itemDetailDescriptionStock"> <strong>Stock:</strong> {stock}</p>
                     <ItemCount stock={stock} initial={0} finishShop={finishShop}/>
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable={false}
+                        pauseOnHover
+                        />
                 </div>
                 }
             </div>

@@ -8,22 +8,13 @@ const Cart = ()=> {
 
     const { products , removeItem , clearCart , productsFinalPrice} = useContext(cartContext);
     let totalPrice = 0;
-    // console.log(productsFinalPrice);
-    // useState(
-    //     () => {totalPrice = 0}
-    //     ,
-    //     []
-    // );
 
     return(
         (products.length === 0 ) ? 
-        <>
-            <div className="Cart">
-                <div >No hay nada en tu carrito. <Link to="/"> Compra aquí</Link></div>
-            </div>
-        </>
+        <div className="Cart">
+            <div >No hay nada en tu carrito. <Link to="/"> Compra aquí</Link></div>
+        </div>
         :
-        <>
             <div className="buyContainer">
                 <div className="productsTotalContainer">
                     <div className="cartProductsContainer">
@@ -54,16 +45,6 @@ const Cart = ()=> {
                 </div>
             <Form></Form>
             </div>
-
-
-            {/* <div className="cartTotal">
-                <span>Total: USD$ {products.forEach(elementProduct => {
-                    totalPrice += parseInt(elementProduct.priceNum) * parseInt(elementProduct.quantity)
-                })
-                } {totalPrice}</span>
-                <button onClick={clearCart} className="cartClean">Limpiar carrito</button>
-            </div> */}
-        </> 
     )
 
 }

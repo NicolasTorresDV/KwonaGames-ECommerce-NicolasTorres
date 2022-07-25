@@ -75,3 +75,29 @@
 .itemDetailLink{
     text-decoration: none;
 }
+
+
+@media (max-width: 1401px) {
+    .itemDetail  {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1001px) {
+    .itemDetail  {
+        flex-direction: column;
+    }
+
+    .itemDetailDescription {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 701px) {
+    .itemDetailImage img{
+        height: 300px;
+        width: 300px;
+        border-radius: 23px;
+    }
+}

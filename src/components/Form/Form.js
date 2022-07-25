@@ -1,7 +1,6 @@
-import React, { useContext, useDebugValue, useEffect, useState } from "react";
+import React, { useState } from "react";
 import './Form.css';
 import useForm from "../../hooks/useForm";
-import { useNavigate } from "react-router-dom";
 
 
 const Form = () => {
@@ -21,7 +20,7 @@ const Form = () => {
 
   return (
     <div className="formContainer">
-        {/* Para que no me haga reload y se borre todo, pongo: action="javascript:void(0);" */}
+
         <form className="form" onSubmit={handleSubmit}> 
             <h2>Completa el formulario para terminar tu compra!</h2>
 

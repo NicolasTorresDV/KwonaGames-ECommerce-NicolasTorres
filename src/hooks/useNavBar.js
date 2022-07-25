@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import { getCategories } from "../AsyncMock/productMock"; //Traigo los datos de prueba
 import { database } from "../Firebase/firebase";
 import { getDocs , collection} from "firebase/firestore"
 

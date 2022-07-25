@@ -3,6 +3,9 @@ import useItemDetailContainer from "../../hooks/useItemDetailContainer";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.css"
 import { useParams } from 'react-router-dom'; 
+//Toastify
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemDetailContainer = () => {
 
@@ -17,6 +20,17 @@ const ItemDetailContainer = () => {
     return (
         <div className="itemDetailContainer">
             <ItemDetail props={product}/>
+            <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable={false}
+                        pauseOnHover
+                        />
         </div>
     )
 

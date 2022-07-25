@@ -20,7 +20,6 @@
     background-color: #1d1e20;
     text-align: center;
     margin: 1%;
-    padding: 15px;
     color: white;
     border-radius: 23px;
     box-shadow: -2px 0px 12px -2px rgba(156, 156, 156, 0.96);
@@ -39,3 +38,27 @@
     transform: scale(105%);
     cursor: pointer;
 }
+
+
+@media (max-width: 1501px) {
+    .itemListLink  {
+        padding: 0;
+    }
+}
+
+@media (max-width: 1251px) {
+    .itemListLink  {
+        width: 30%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .itemListLink  {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .itemListProducts{
+        flex-direction: column;
+    }
+  }

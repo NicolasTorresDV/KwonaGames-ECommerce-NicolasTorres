@@ -1,7 +1,9 @@
 import { useState } from "react";
-// import { getProducto } from "../AsyncMock/productMock"; //Traigo los datos de prueba
 import { database } from "../Firebase/firebase";
 import { doc , getDoc , collection } from "firebase/firestore"
+//Toastify
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const useItemDetails = () => {
@@ -12,7 +14,6 @@ const useItemDetails = () => {
 
     const getProduct = async (id) => {
         try {
-            // const productData = await getProducto(id);
             const productCollection = collection(database , 'Productos')
             const refDoc = doc(productCollection , id )
             const productDocs = await getDoc(refDoc);
@@ -23,8 +24,16 @@ const useItemDetails = () => {
                 ...productDocs.data(),
             });
         } catch (error) {
-            //Si hay algun error, mando un alert
-            alert("Ocurrió un error al cargar el detalle del producto " + error);
+            //Si hay algun error, mando una notificacion
+            toast.error('Debes agregar al menos un producto', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                });
         }
     }
 

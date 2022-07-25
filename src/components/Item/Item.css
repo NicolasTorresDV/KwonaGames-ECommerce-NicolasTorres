@@ -30,3 +30,20 @@
     overflow: hidden;
     width: 100%;
 }
+
+
+
+@media (max-width: 1501px) {
+    .itemElementsImage  {
+        width: 140px;
+        height: 100px;
+    }
+}
+
+
+@media (max-width: 1501px) {
+    .itemElementsImage  {
+        width: 220px;
+        height: 160px;
+    }
+}

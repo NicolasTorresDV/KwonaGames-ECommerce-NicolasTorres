@@ -6,11 +6,12 @@ const { Provider } = cartContext;
 
 export const CartCustomProvider = ( { children } ) => {
 
-    const {products , qtyProdcuts, productsFinalPrice , addItem , removeItem , isInCart , clearCart , quantityProducts , productsTotal} = useCartContext();
+    const {products , qtyProdcuts, productsFinalPrice , addItem , removeItem , isInCart , clearCart , quantityProducts , productsTotal , updateLocalStorage} = useCartContext();
 
     useEffect(() => {
         quantityProducts()
         productsTotal()
+        updateLocalStorage()
     }, [products]);
 
 

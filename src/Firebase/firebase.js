@@ -5,12 +5,12 @@ import { getFirestore } from "firebase/firestore"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBlZ2k1u4cOQZQRlvnNOpxYyRJd5GaOYxQ",
-  authDomain: "kwonagames-ecommerce.firebaseapp.com",
-  projectId: "kwonagames-ecommerce",
-  storageBucket: "kwonagames-ecommerce.appspot.com",
-  messagingSenderId: "98887982737",
-  appId: "1:98887982737:web:b5ddfa868477a8b5e16930"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase

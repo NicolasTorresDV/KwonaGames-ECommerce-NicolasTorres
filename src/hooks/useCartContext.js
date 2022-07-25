@@ -3,8 +3,15 @@ import { useState } from "react";
 //Uso toda la logica de CartContext aqui.
 const useCartContext = () => {
 
+    let productsStorage = [];
+    if (localStorage.getItem("ProductosCarrito") == null) {
+        localStorage.setItem("ProductosCarrito",JSON.stringify(productsStorage));
+    }else{
+        productsStorage = JSON.parse(localStorage.getItem('ProductosCarrito'));
+    }
+
     //Declaro los hooks que voy a usar
-    const [products , setProducts] = useState([]);
+    const [products , setProducts] = useState(productsStorage);
     const [qtyProdcuts , setQtyProducts] = useState(0);
     const [productsFinalPrice  , setProductsFinalPrice] = useState(0);
  
@@ -37,9 +44,7 @@ const useCartContext = () => {
             setProducts(auxProducts);
 
         }else {
-            if (product.quantity <= 0 ) {
-                alert("Debe agregar al menos un producto");
-            } else {  
+            if (product.quantity > 0 ) {
                 setProducts([...products, product]);
             }
         }
@@ -50,7 +55,8 @@ const useCartContext = () => {
 
     //"Quito" un producto de la lista de Cart. Basicamente le asigno a lista de productos, la misma lista pero sin el producto eliminado
     const removeItem = (productId) =>{
-        setProducts(products.filter(elementProducts => elementProducts.id !== productId));
+        const auxProducts = products.filter(elementProducts => elementProducts.id !== productId);
+        setProducts(auxProducts);
         quantityProducts();
         productsTotal();
     }
@@ -67,12 +73,16 @@ const useCartContext = () => {
         productsTotal();
     }
 
-    
+    //Actualizar lista de productos en localStorage
+
+    const updateLocalStorage = () => {
+        localStorage.setItem('ProductosCarrito' , JSON.stringify(products));
+    }
     
    
 
     return {
-        products , qtyProdcuts , productsFinalPrice , addItem , removeItem , isInCart , clearCart , quantityProducts , productsTotal
+        products , qtyProdcuts , productsFinalPrice , addItem , removeItem , isInCart , clearCart , quantityProducts , productsTotal , updateLocalStorage
     }
 
 }
