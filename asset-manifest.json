@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/KwonaGames-ECommerce-NicolasTorres/static/css/main.d40c7689.css",
+    "main.js": "/KwonaGames-ECommerce-NicolasTorres/static/js/main.2331b05d.js",
+    "static/js/787.a616d00a.chunk.js": "/KwonaGames-ECommerce-NicolasTorres/static/js/787.a616d00a.chunk.js",
+    "static/media/ShoppingBag.ico": "/KwonaGames-ECommerce-NicolasTorres/static/media/ShoppingBag.a43f1bdd76d5e9e3a601.ico",
+    "static/media/LoadingPreviewGif.gif": "/KwonaGames-ECommerce-NicolasTorres/static/media/LoadingPreviewGif.c7d9f0819b0870f9ad8e.gif",
+    "index.html": "/KwonaGames-ECommerce-NicolasTorres/index.html",
+    "main.d40c7689.css.map": "/KwonaGames-ECommerce-NicolasTorres/static/css/main.d40c7689.css.map",
+    "main.2331b05d.js.map": "/KwonaGames-ECommerce-NicolasTorres/static/js/main.2331b05d.js.map",
+    "787.a616d00a.chunk.js.map": "/KwonaGames-ECommerce-NicolasTorres/static/js/787.a616d00a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d40c7689.css",
+    "static/js/main.2331b05d.js"
+  ]
+}
