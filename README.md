@@ -31,3 +31,5 @@ En este repositorio se encuentra la entrega del proyecto correspondiente al curs
 
 **Nicolas Torres**
 https://www.linkedin.com/in/nicolas-torres-6377a1133/
+
+Deploy: https://sunny-basbousa-f11f3c.netlify.app
